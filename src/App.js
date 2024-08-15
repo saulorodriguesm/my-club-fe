@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ListarJogadores from "./components/ListarJogadores";
+import AdicionarJogador from "./components/AdicionarJogador";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClickModal = () => {
+    isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>MyClub</h1>
+      <ListarJogadores isModalOpen={isModalOpen} />
+      <button onClick={handleClickModal}> Adicionar Jogador </button>
+      {isModalOpen ? <AdicionarJogador /> : ""}
     </div>
   );
 }
