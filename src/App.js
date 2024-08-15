@@ -10,11 +10,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>MyClub</h1>
-      <ListarJogadores isModalOpen={isModalOpen} />
-      <button onClick={handleClickModal}> Adicionar Jogador </button>
-      {isModalOpen ? <AdicionarJogador /> : ""}
+    <div className="app">
+      <div className="app-container">
+        {" "}
+        <div className="app-header">
+          {" "}
+          <h1>MyClub</h1>
+        </div>
+        <ListarJogadores isModalOpen={isModalOpen} />
+        <button className="app-add--button" onClick={handleClickModal}>
+          {" "}
+          Adicionar Jogador{" "}
+        </button>
+        {isModalOpen ? <AdicionarJogador /> : ""}
+      </div>
     </div>
   );
 }

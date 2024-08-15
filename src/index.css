@@ -1,30 +1,75 @@
 body {
   background-color: #454443;
 }
+.app {
+}
+.app-header > h1 {
+  margin-left: 25px;
+  font-size: 30px;
+  color: #fff;
+}
+.app-container {
+  max-width: 1650px;
+  margin: 0 auto;
+}
 .app-list {
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: flex-start;
 }
 .app-list--item {
   width: 20%;
-  margin: 0 10px;
   list-style-type: none;
 }
-.app-list--item > img { 
-  height: 350px;
-  width: 100%;
+.app-list--item > li {
+  padding: 25px;
 }
-.add-overlay {
-  position: fixed;
-  z-index: 9;
-  top: 0;
+.app-list--image > img {
+  height: 100%;
+}
+.app-list--info {
+  background-color: #fff;
+  border-top: 1px solid #000;
+  padding: 10px;
+}
+.app-list--buttons {
+  display: flex;
+  margin: 5px 0;
+}
+.app-list--buttons > button {
+  margin-right: 10px;
+}
+.app-button--edit {
+  background-color: #c7804a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.app-button--delete {
+  background-color: #8c2727;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.app-list--image {
+  background-color: #fff;
   width: 100%;
-  height: 100vh;
+  height: 350px;
   display: flex;
   justify-content: center;
 }
-.add-form {
- background: white;
- height: 80vh;
- max-width: 1000px;
+.app-add--button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: greenyellow;
+  color: #000;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
 }
