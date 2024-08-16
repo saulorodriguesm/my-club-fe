@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EditarJogador from "./EditarJogador";
 
-const ListarJogadores = () => {
+const ListarJogadores = ({ searchTerm }) => {
   const [jogadores, setJogadores] = useState([]);
   const [jogadorEditandoId, setJogadorEditandoId] = useState(null);
 
@@ -38,12 +38,16 @@ const ListarJogadores = () => {
     }
   };
 
+  const jogadoresFiltrados = jogadores.filter((jogador) =>
+    jogador.nome.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <ul className="app-list">
-        {jogadores.map((jogador) => (
-          <div className="app-list--item">
-            <li key={jogador.id}>
+        {jogadoresFiltrados.map((jogador) => (
+          <div className="app-list--item" key={jogador.id}>
+            <li>
               <div className="app-list--image">
                 <img alt="Imagem do jogador" src={jogador.imagem} />
               </div>
@@ -65,7 +69,7 @@ const ListarJogadores = () => {
                     className="app-button--edit"
                     onClick={() => handleClickModal(jogador.id)}
                   >
-                    Editar jogador{" "}
+                    Editar jogador
                   </button>
                   <button
                     className="app-button--delete"

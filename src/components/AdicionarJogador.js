@@ -16,13 +16,11 @@ const AdicionarJogador = () => {
         posicao,
         idade: parseInt(idade),
         imagem,
-        nacionalidade
+        nacionalidade,
       })
       .then((response) => {
         console.log("Jogador adicionado com sucesso!", response.data);
-        setNome("");
-        setPosicao("");
-        setIdade("");
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Houve um erro ao adicionar o jogador!", error);
@@ -30,12 +28,13 @@ const AdicionarJogador = () => {
   };
 
   return (
-    <div className="add-overlay">
-      <div className="add-form">
+    <div className="app-form">
+      <div className="app-form--container">
         <h2>Adicionar Jogador</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="" onSubmit={handleSubmit}>
           <input
             type="text"
+            className="app-form--input"
             placeholder="Nome"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
@@ -43,6 +42,7 @@ const AdicionarJogador = () => {
           />
           <input
             type="text"
+            className="app-form--input"
             placeholder="Posição"
             value={posicao}
             onChange={(e) => setPosicao(e.target.value)}
@@ -50,6 +50,7 @@ const AdicionarJogador = () => {
           />
           <input
             type="number"
+            className="app-form--input"
             placeholder="Idade"
             value={idade}
             onChange={(e) => setIdade(e.target.value)}
@@ -58,6 +59,7 @@ const AdicionarJogador = () => {
 
           <input
             type="text"
+            className="app-form--input"
             placeholder="URL da imagem"
             value={imagem}
             onChange={(e) => setImagem(e.target.value)}
@@ -66,12 +68,13 @@ const AdicionarJogador = () => {
 
           <input
             type="text"
+            className="app-form--input"
             placeholder="Nacionalidade"
             value={nacionalidade}
             onChange={(e) => setNacionalidade(e.target.value)}
             required
           />
-          <button type="submit">Adicionar</button>
+          <button className="app-form--button" type="submit">Adicionar</button>
         </form>
       </div>
     </div>

@@ -32,6 +32,7 @@ function EditarJogador({ jogador }) {
 
       if (response.ok) {
         alert("Jogador atualizado com sucesso");
+        window.location.reload();
       } else {
         alert("Erro ao atualizar jogador");
       }
@@ -41,33 +42,54 @@ function EditarJogador({ jogador }) {
   };
 
   return (
-    <form onSubmit={atualizarJogador}>
-      <input
-        type="text"
-        name="nome"
-        value={formData.nome}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="posicao"
-        defaultValue={jogador}
-        value={formData.posicao}
-        onChange={handleChange}
-      />
-      <input
-        type="number"
-        name="idade"
-        value={formData.idade}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="nacionalidade"
-        value={formData.nacionalidade}
-        onChange={handleChange}
-      />
-      <button type="submit">Atualizar</button>
+    <form className="app-form--edit" onSubmit={atualizarJogador}>
+      <div>
+        <div className="app-form--edit__input">
+          {" "}
+          <b> Nome: </b>
+          <input
+            type="text"
+            name="nome"
+            value={formData.nome}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="app-form--edit__input">
+          <b> Posição:</b>
+          <input
+            type="text"
+            name="posicao"
+            defaultValue={jogador}
+            value={formData.posicao}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="app-form--edit__input">
+          <b>Idade:</b>
+          <input
+            type="number"
+            name="idade"
+            value={formData.idade}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="app-form--edit__input">
+          <b> Nacionalidade: </b>
+          <input
+            type="text"
+            name="nacionalidade"
+            value={formData.nacionalidade}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+      <div>
+        <button className="app-form--edit__button" type="submit">
+          Salvar
+        </button>
+      </div>
     </form>
   );
 }

@@ -1,8 +1,6 @@
 body {
   background-color: #454443;
 }
-.app {
-}
 .app-header > h1 {
   margin-left: 25px;
   font-size: 30px;
@@ -11,6 +9,15 @@ body {
 .app-container {
   max-width: 1650px;
   margin: 0 auto;
+}
+.app-searchbar {
+  margin: 0 25px;
+}
+.app-searchbar > input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 .app-list {
   display: flex;
@@ -48,6 +55,10 @@ body {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  cursor: pointer;
+}
+.app-button--edit:hover {
+  opacity: 0.9;
 }
 .app-button--delete {
   background-color: #8c2727;
@@ -55,6 +66,10 @@ body {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  cursor: pointer;
+}
+.app-button--delete:hover {
+  opacity: 0.9;
 }
 .app-list--image {
   background-color: #fff;
@@ -67,9 +82,105 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: greenyellow;
-  color: #000;
+  background-color: #33cc00;
+  border: 1px solid #33cc00;
+  color: #fff;
   border-radius: 5px;
   padding: 15px;
   cursor: pointer;
+  text-decoration: none;
+}
+.app-add--button:hover {
+  opacity: 0.9;
+}
+.app-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+.app-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.app-modal > div {
+  width: 30%;
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  min-height: 310px;
+}
+.app-modal--close {
+  background: red;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 30px;
+  border-radius: 10px;
+}
+.app-modal--close:hover {
+  opacity: 0.9;
+}
+.app-form--container > form {
+  display: flex;
+  flex-direction: column;
+}
+.app-form--container > h2 {
+  text-align: center;
+}
+.app-form--container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.app-form--input {
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.app-form--button {
+  background-color: #33cc00;
+  padding: 10px;
+  border: 1px solid #33cc00;
+  border-radius: 5px;
+  width: 70%;
+  margin: 10px auto;
+  cursor: pointer;
+  color: #fff;
+}
+.app-form--button:hover {
+  opacity: 0.9;
+}
+.app-form--edit {
+  margin-top: 5px;
+  border-top: 1px solid gray;
+}
+.app-form--edit__input {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+.app-form--edit__button {
+  background-color: #33cc00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.app-form--edit__button:hover {
+  opacity: 0.9;
 }
